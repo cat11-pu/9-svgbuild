@@ -1,8 +1,11 @@
-// render.js：渲染指令（基线：不合并、不报预算）
+// render.js：渲染指令与预算
+const VISITS_PER_POINT = 2; // 写死上限：每个原始点最多允许访问两次
+
 export function toInstructions(path) {
   return path.commands.map((cmd) => cmd.join(" "));
 }
 
 export function budget(path) {
-  return { visited: path.commands.length, limit: path.commands.length };
+  const visited = path.visited;
+  return { visited: visited, limit: visited * VISITS_PER_POINT };
 }
