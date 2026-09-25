@@ -1,0 +1,5 @@
+{
+  "name": "svgbuild",
+  "private": true,
+  "type": "module"
+}
